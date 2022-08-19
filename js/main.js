@@ -67,7 +67,7 @@ randomOptions.forEach((option) => {
   };
 });
 
-if (localStorage.randomBackground != null) {
+if (localStorage.randomBackgroundImage != null) {
   if (localStorage.randomBackgroundImage == "yes") {
     randomizeBackround();
     randomOptions[0].classList.add("active");
@@ -75,6 +75,7 @@ if (localStorage.randomBackground != null) {
   } else {
     randomOptions[1].classList.add("active");
     randomOptions[0].classList.remove("active");
+    clearInterval(randomBackground);
   }
 } else {
   randomOptions[0].classList.add("active");
